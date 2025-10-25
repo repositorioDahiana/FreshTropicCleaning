@@ -1,1 +1,94 @@
 @import "tailwindcss";
+
+/* Imagen flotante suave */
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+}
+  
+ .animate-float {
+   animation: float 6s ease-in-out infinite;
+}
+  
+  /* Fade + Slide para texto */
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInSlide {
+    animation: fadeInSlide 1.2s ease-out both;
+  }
+
+  /* Fade + slide in (entrada suave) */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out both;
+  }
+  
+  /* Pulso constante (ligero) para números */
+  @keyframes pulseStat {
+    0%, 100% {
+      transform: scale(1);
+      color: #15803d; /* green-700 */
+    }
+    50% {
+      transform: scale(1.08);
+      color: #22c55e; /* green-500 */
+    }
+  }
+  .animate-pulseStat {
+    animation: pulseStat 3s ease-in-out infinite;
+  }
+
+/* 🌴 Animaciones para la galería "See Our Work" */
+
+/* Flotación suave y brillo */
+@keyframes floatImage {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      filter: brightness(1);
+    }
+    50% {
+      transform: translateY(-6px) scale(1.02);
+      filter: brightness(1.05);
+    }
+  }
+  .animate-floatImage {
+    animation: floatImage 6s ease-in-out infinite;
+  }
+  
+  /* Efecto de entrada */
+  @keyframes fadeInGallery {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeInGallery {
+    animation: fadeInGallery 1.2s ease-out both;
+  }
+  
