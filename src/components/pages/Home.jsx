@@ -1,61 +1,69 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <main className="bg-white text-slate-800">
       {/* Hero / Intro Section */}
-      <section className="bg-gradient-to-b from-green-200 to-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 py-24 grid md:grid-cols-2 items-center gap-10">
-          <div className="animate-fadeInSlide">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-              Discover a cleaner, healthier space 🌴
-            </h1>
-            <p className="mt-4 text-slate-700 text-lg">
-              FreshTropic Cleaning offers top-tier residential and commercial cleaning solutions
-              tailored to your lifestyle and schedule. Trust, punctuality, and professionalism in every visit.
-            </p>
-            <div className="mt-6 flex gap-4">
-              <a
-                href="/services"
-                className="bg-green-700 text-white font-semibold px-6 py-3 rounded-xl hover:bg-amber-500 hover:shadow-md transition-all"
-              >
-                Our Services
-              </a>
-              <a
-                href="/about"
-                className="border border-green-700 text-green-700 font-semibold px-6 py-3 rounded-xl hover:bg-green-700 hover:text-white transition-all"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
+      <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4">
+        {/* Background Image */}
+        <img
+          src="/ImagHome1.jpg"
+          alt="Hero background"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        />
 
-          <div className="animate-float">
-            <img
-              src="/ImagHome1.jpg"
-              alt="Professional cleaners"
-              className="w-full rounded-2xl shadow-lg object-cover aspect-video"
-            />
+        {/* Overlay for contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-green-900/70 via-green-700/30 to-transparent z-0"></div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg tracking-wide">
+            WE, CLEAN.
+          </h1>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="tel:8669866005"
+              className="border-2 border-white text-white px-6 py-3 font-semibold rounded-xl hover:bg-white hover:text-green-700 transition-all"
+            >
+              CALL/TEXT: (339) 035-521
+            </a>
+            <a
+              href="#"
+              className="bg-green-900 text-white px-6 py-3 font-semibold rounded-xl hover:bg-amber-500 transition-all"
+            >
+              BOOK ONLINE
+            </a>
+            <Link
+              to="/hiring"
+              className="border-2 border-white text-white px-6 py-3 font-semibold rounded-xl hover:bg-white hover:text-green-700 transition-all"
+            >
+              NOW HIRING
+            </Link>
+
           </div>
         </div>
       </section>
 
       {/* Impact / Stats Section */}
-      <section className="bg-green-100 py-20 animate-fadeInUp">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-slate-900">Why People Choose Us</h2>
-          <p className="mt-2 text-slate-600">Numbers that reflect our commitment and trust.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-            <div className="animate-pulseStat">
-              <p className="text-4xl font-extrabold text-green-700">+1,500</p>
-              <p className="mt-1 text-sm text-slate-600">Spaces cleaned</p>
-            </div>
-            <div className="animate-pulseStat [animation-delay:0.5s]">
-              <p className="text-4xl font-extrabold text-green-700">98%</p>
-              <p className="mt-1 text-sm text-slate-600">Customer satisfaction</p>
-            </div>
-            <div className="animate-pulseStat [animation-delay:1s]">
-              <p className="text-4xl font-extrabold text-green-700">4.9★</p>
-              <p className="mt-1 text-sm text-slate-600">Average rating</p>
-            </div>
+      <section className="bg-green-100 py-16 text-center animate-fadeInUp">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-slate-900 mb-10">WHY CHOOSE US?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              "Certified Professional Cleaners",
+              "Environmentally Friendly Cleaning",
+              "100% Satisfaction Guaranteed",
+              "Available Evenings & Weekends",
+            ].map((text, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center text-slate-800 gap-2"
+              >
+                <span className="h-6 w-[2px] bg-green-700"></span>
+                <p className="font-medium leading-tight">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -63,56 +71,104 @@ export default function Home() {
       {/* Image Gallery / Portfolio */}
       <section className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-4 text-center animate-fadeInGallery">
-          <h2 className="text-2xl font-bold text-slate-900">See Our Work</h2>
-          <p className="mt-2 text-slate-600">Real results from real spaces.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mb-10">OUR SERVICES</h2>
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              "/gallery1.jpg",
-              "/gallery2.jpg",
-              "/gallery3.jpg",
-              "/gallery4.jpg",
-            ].map((src, i) => (
+              { img: "/service1.jpg", color: "bg-pink-400/40", text: "Home Cleaning" },
+              { img: "/service2.jpg", color: "bg-blue-500/40", text: "Maid Services" },
+              { img: "/service3.jpg", color: "bg-cyan-400/40", text: "Window Washing" },
+              { img: "/service4.png", color: "bg-green-400/40", text: "Commercial Cleaning" },
+              { img: "/service5.png", color: "bg-lime-400/40", text: "Move-In / Move-Out Cleaning" },
+              { img: "/service6.png", color: "bg-rose-500/40", text: "Vacation Rentals" },
+            ].map((service, i) => (
               <div
                 key={i}
-                className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-500 animate-floatImage"
-                style={{ animationDelay: `${i * 0.5}s` }}
+                className="relative overflow-hidden rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-500"
               >
                 <img
-                  src={src}
-                  alt={`Cleaned space ${i + 1}`}
-                  className="w-full h-56 object-cover"
+                  src={service.img}
+                  alt={service.text}
+                  className="w-full h-56 object-cover brightness-95"
                 />
+                <div
+                  className={`absolute inset-0 ${service.color} flex items-center justify-center`}
+                >
+                  <p className="text-white text-lg font-semibold drop-shadow-lg">
+                    {service.text}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-
       {/* Call to Action */}
-      <section className="bg-green-700 py-20 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold">Ready to enjoy a spotless space?</h2>
-          <p className="mt-4 text-lg">
-            Book your first cleaning or reach out to learn more about how we can help.
-          </p>
-          <div className="mt-6 flex justify-center gap-4 flex-wrap">
-            <a
-              href="/contact"
-              className="bg-white text-green-700 font-semibold px-6 py-3 rounded-xl hover:bg-slate-100 transition-all"
-            >
-              Contact Us
-            </a>
-            <a
-              href="/services"
-              className="border border-white font-semibold px-6 py-3 rounded-xl hover:bg-white hover:text-green-700 transition-all"
-            >
-              View Services
-            </a>
+      <section className="bg-green-100 py-16 text-center animate-fadeInUp">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-green-900 text-center mb-12">BENEFITS</h2>
+
+          <div className="space-y-12">
+            {/* Card 1 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <img
+                src="/benefit1.jpg"
+                alt="Choosing Maravilla Cleaners"
+                className="rounded-xl shadow-lg object-cover w-full h-64"
+              />
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-green-800">
+                  Benefits of Fresh Tropic Cleaning
+                </h3>
+                <p className="text-slate-700">
+                  We pride ourselves on being a cleaning company that strives for total quality
+                  for our clients in Lee and Collier County as well as…
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <img
+                src="/benefit2.jpg"
+                alt="Customer Service"
+                className="rounded-xl shadow-lg object-cover w-full h-64 md:order-2"
+              />
+              <div className="md:order-1">
+                <h3 className="text-xl font-semibold mb-3 text-green-800">
+                  Excellent Customer Service: Satisfaction Guaranteed
+                </h3>
+                <p className="text-slate-700">
+                  Customers are not just looking for a spotless home or office; they also want to
+                  feel valued and respected.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <img
+                src="/benefit3.jpg"
+                alt="Competitive Pricing"
+                className="rounded-xl shadow-lg object-cover w-full h-64"
+              />
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-green-800">
+                  Competitive Pricing and Flexible Scheduling Options
+                </h3>
+                <p className="text-slate-700">
+                  We understand the importance of price when it comes to choosing a cleaning
+                  service, and we adapt to your needs.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+
+
     </main>
   );
 }

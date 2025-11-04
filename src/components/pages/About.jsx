@@ -15,37 +15,29 @@ export default function About() {
 
       {/* Mission & Vision */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-12">
-          <div>
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
+          {/* Imagen lateral */}
+          <div className="animate-float">
             <img
               src="/gallery1.jpg"
-              alt="Our Mission"
-              className="w-full h-72 object-cover rounded-2xl shadow-md animate-floatImage"
+              alt="Fresh Tropic Cleaning Team at Work"
+              className="w-full h-80 object-cover rounded-2xl shadow-lg"
             />
           </div>
-          <div className="bg-green-100 p-8 rounded-2xl shadow-md">
-            <h2 className="text-xl font-semibold text-green-700">Our Mission</h2>
-            <p className="mt-4 text-base text-slate-700 leading-relaxed">
-              To offer dependable, high-quality cleaning services that bring peace,
-              comfort, and freshness to every home and office we serve.
-            </p>
-          </div>
-        </div>
 
-        <div className="max-w-6xl mx-auto px-4 mt-16 grid md:grid-cols-2 items-center gap-12">
-          <div className="bg-green-100 p-8 rounded-2xl shadow-md order-2 md:order-1">
-            <h2 className="text-xl font-semibold text-green-700">Our Vision</h2>
-            <p className="mt-4 text-base text-slate-700 leading-relaxed">
-              To become the most trusted cleaning provider in the industry,
-              known for professionalism, attention to detail, and exceptional customer experience.
+          {/* Texto */}
+          <div className="bg-green-100 p-8 md:p-10 rounded-2xl shadow-lg border border-green-200">
+            <p className="text-base leading-relaxed mb-6 text-slate-800">
+              At <span className="font-semibold text-green-700">Fresh Tropic Cleaning</span>, we take pride in providing
+              high-quality cleaning services in Fort Myers and surrounding areas. With our skilled team and
+              state-of-the-art equipment, we guarantee exceptional results.
             </p>
-          </div>
-          <div className="order-1 md:order-2">
-            <img
-              src="/gallery5.jpg"
-              alt="Our Vision"
-              className="w-full h-72 object-cover rounded-2xl shadow-md animate-floatImage"
-            />
+            <p className="text-base leading-relaxed text-slate-800">
+              Our mission is centered around three core values:{" "}
+              <span className="font-semibold text-green-700">Cleanliness, Organization, and Mental Health.</span> We’re not
+              just a cleaning service — we’re a compassionate company committed to your well-being. A clean and organized
+              space is essential for a healthy life, and we understand that better than anyone else.
+            </p>
           </div>
         </div>
       </section>
@@ -53,61 +45,38 @@ export default function About() {
       {/* What Makes Us Different */}
       <section className="bg-green-50 py-20">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-green-800">What Makes Us Different</h2>
+          <h2 className="text-2xl font-bold text-green-800">Our Achievements</h2>
           <p className="mt-2 text-slate-600">
-            More than cleaning — we bring care, reliability and excellence to every job.
+            Numbers that reflect our commitment, growth, and excellence in every service.
           </p>
 
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                title: "Certified Professionals",
-                desc: "Our team is trained, background-checked, and fully committed to excellence.",
-                img: "/Img2.png",
-              },
-              {
-                title: "Eco-Friendly Products",
-                desc: "We use safe, non-toxic and biodegradable cleaning solutions for your family and the planet.",
-                img: "/Img4.png",
-              },
-              {
-                title: "Flexible Scheduling",
-                desc: "We work mornings, evenings and weekends — to fit your lifestyle and needs.",
-                img: "/Img5.png",
-              },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-6 shadow-md border hover:shadow-lg transition-all"
-              >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-40 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-lg font-semibold text-green-700">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-700">{item.desc}</p>
-              </div>
-            ))}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {/* Clean Homes */}
+            <div className="flex flex-col items-center">
+              <p className="text-5xl font-extrabold text-green-700">2500</p>
+              <p className="mt-2 text-sm font-medium text-slate-700">Clean Homes</p>
+            </div>
+
+            {/* Professional Staffers */}
+            <div className="flex flex-col items-center">
+              <p className="text-5xl font-extrabold text-green-700">15+</p>
+              <p className="mt-2 text-sm font-medium text-slate-700">Professional Staffers</p>
+            </div>
+
+            {/* Happy Clients */}
+            <div className="flex flex-col items-center">
+              <p className="text-5xl font-extrabold text-green-700">1500+</p>
+              <p className="mt-2 text-sm font-medium text-slate-700">Happy Clients</p>
+            </div>
+
+            {/* Years in Business */}
+            <div className="flex flex-col items-center">
+              <p className="text-5xl font-extrabold text-green-700">4</p>
+              <p className="mt-2 text-sm font-medium text-slate-700">Years in Business</p>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-green-700 py-20 text-white text-center">
-        <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl font-bold">Ready to experience freshness?</h2>
-          <p className="mt-4 text-base">
-            Let’s make your home or office sparkle. Contact us for a free estimate today.
-          </p>
-          <a
-            href="/contact"
-            className="mt-6 inline-block bg-white text-green-700 font-semibold px-6 py-3 rounded-xl hover:bg-slate-100 transition"
-          >
-            Get a Free Estimate
-          </a>
-        </div>
-      </section>
+      </section>      
     </main>
   );
 }

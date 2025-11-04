@@ -52,7 +52,6 @@ export default function Navbar() {
             </Item>
             <Item to="/about">About Us</Item>
             <Item to="/services">Services</Item>
-            <Item to="/contact">Contact</Item>
             <Link
               to="/contact"
               className="ml-2 rounded-xl bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-500 hover:shadow-[0_0_10px_rgba(255,200,0,0.5)] transition-all duration-300"
@@ -123,13 +122,6 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
             >
               Services
-            </Link>
-            <Link
-              to="/contact"
-              className="py-2 text-slate-700 hover:text-green-700 transition-all"
-              onClick={() => setOpen(false)}
-            >
-              Contact
             </Link>
             <Link
               to="/contact"

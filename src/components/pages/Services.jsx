@@ -24,7 +24,7 @@ export default function Services() {
               {
                 title: "Hourly Cleaning",
                 desc: "Perfect for quick cleanups, last-minute guests, or flexible needs. Book as many hours as you need.",
-                image: "/Img5.png",
+                image: "/gallery5.jpg",
               },
               {
                 title: "Contract-Based Cleaning",
@@ -68,10 +68,10 @@ export default function Services() {
             {[
               { name: "Apartments", image: "/Img6.jpg" },
               { name: "Houses", image: "/Img8.jpg" },
-              { name: "Offices", image: "/gallery2.jpg" },
-              { name: "Vacation Rentals", image: "/gallery4.jpg" },
-              { name: "Post-Move Cleaning", image: "/Img9.png" },
-              { name: "Retail & Commercial", image: "/Img10.png" },
+              { name: "Offices", image: "/service2.jpg" },
+              { name: "Vacation Rentals", image: "/service6.png" },
+              { name: "Post-Move Cleaning", image: "/Img8.jpg" },
+              { name: "Retail & Commercial", image: "/service3.jpg" },
             ].map((p, i) => (
               <div
                 key={i}
@@ -90,22 +90,6 @@ export default function Services() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-green-700 py-20 text-white text-center animate-fadeInUp">
-        <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl font-bold">Get a Free Estimate Today</h2>
-          <p className="mt-4 text-base">
-            Whether it’s a one-time deep clean or a recurring service, we’re here to help.
-          </p>
-          <a
-            href="/contact"
-            className="mt-6 inline-block bg-white text-green-700 font-semibold px-6 py-3 rounded-xl hover:bg-slate-100 transition-all"
-          >
-            Request a Quote
-          </a>
         </div>
       </section>
     </main>

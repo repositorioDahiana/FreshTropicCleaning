@@ -1,164 +1,79 @@
-import { useState } from "react";
+import {
+  FaWhatsapp,
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaGoogle,
+  FaHome,
+  FaUsers,
+  FaFileAlt,
+  FaGlobe,
+  FaPinterestP,
+} from "react-icons/fa";
+import { GiHouse } from "react-icons/gi";
+import { MdWork } from "react-icons/md";
+import { RiToolsFill } from "react-icons/ri";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formData = { name, email, phone, message };
-
-    try {
-      const res = await fetch("https://backend-freshtropiccleaning.onrender.com/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (res.ok) {
-        alert("✅ Your message was successfully saved!");
-        setName("");
-        setEmail("");
-        setPhone("");
-        setMessage("");
-      } else {
-        alert("❌ Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("⚠️ Error connecting to the server.");
-    }
-  };
-
   return (
-    <main className="bg-white text-slate-800">
+    <main className="bg-gradient-to-b from-green-50 to-white min-h-screen flex flex-col items-center justify-center text-center py-16 px-4">
       {/* Header */}
-      <section className="bg-gradient-to-r from-green-100 via-white to-lime-50 py-20 text-center animate-fadeInSlide">
-        <div className="max-w-3xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-700">
-            Get in Touch
-          </h1>
-          <p className="mt-4 text-lg text-slate-700">
-            Whether you're ready to book or just want to learn more, we’re happy
-            to hear from you.
-          </p>
+      <div className="flex flex-col items-center mb-10 animate-fadeInUp">
+        <img
+          src="/logo.png"
+          alt="Fresh Tropic Cleaning Logo"
+          className="h-24 w-24 rounded-full object-contain mb-4 shadow-lg border-4 border-green-200"
+        />
+        <h1 className="text-2xl font-bold text-green-700">
+          Fresh Tropic Cleaning
+        </h1>
+        <p className="mt-2 text-slate-700 text-sm max-w-md">
+          Family-owned and operated cleaning services powered by quality and
+          innovation.
+        </p>
+
+        <div className="flex gap-4 mt-4 text-green-700 text-xl">
+          <a href="https://wa.me/1339035521" target="_blank" rel="noreferrer">
+            <FaWhatsapp className="hover:text-amber-500 transition" />
+          </a>
+          <a href="mailto:freshtropiccleaning@gmail.com">
+            <FaEnvelope className="hover:text-amber-500 transition" />
+          </a>
         </div>
-      </section>
+      </div>
 
-      {/* Contact Form + Info */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 grid gap-12 md:grid-cols-2 animate-fadeInUp">
-          {/* Info */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-green-700">
-              Contact Information
-            </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Need a quote, have a question, or want to book a cleaning? Reach
-              out via the form or directly using the info below.
-            </p>
-            <ul className="text-sm text-slate-700 space-y-2">
-              <li>
-                <span className="font-medium text-green-700">📞 Phone:</span>{" "}
-                (339) 035-521
-              </li>
-              <li>
-                <span className="font-medium text-green-700">✉️ Email:</span>{" "}
-                freshtropiccleaning@gmail.com
-              </li>
-              <li>
-                <span className="font-medium text-green-700">📍 Location:</span>{" "}
-                United States (Remote & Local)
-              </li>
-              <li>
-                <span className="font-medium text-green-700">🕓 Hours:</span>{" "}
-                Mon–Sat, 8:00am–6:00pm
-              </li>
-            </ul>
-
-            <img
-              src="/gallery1.jpg"
-              alt="Friendly cleaning team"
-              className="w-full rounded-2xl shadow-md object-cover mt-6 animate-floatImage"
-            />
-          </div>
-
-          {/* Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="bg-green-50 p-8 rounded-2xl shadow-lg border animate-fadeInUp"
+      {/* Botones tipo Linktree */}
+      <div className="w-full max-w-sm space-y-4 animate-fadeInUp">
+        {[
+          { icon: <FaUsers />, text: "Review Our Team", link: "/team" },
+          { icon: <FaHome />, text: "Save Our Contact", link: "/save-contact" },
+          { icon: <FaFileAlt />, text: "Free Estimate", link: "/estimate" },
+          { icon: <FaGlobe />, text: "Visit Our Website", link: "/" },
+          { icon: <FaGoogle />, text: "See us on Google", link: "#" },
+          { icon: <FaFacebookF />, text: "See us on Facebook", link: "#" },
+          { icon: <FaInstagram />, text: "See us on Instagram", link: "#" },
+          { icon: <MdWork />, text: "See us on Bark", link: "#" },
+          { icon: <GiHouse />, text: "See us on Angi", link: "#" },
+          { icon: <RiToolsFill />, text: "See us on Thumbtack", link: "#" },
+          { icon: <MdWork />, text: "See us on Craftjack", link: "#" },
+          { icon: <GiHouse />, text: "See us on HomeAdvisor", link: "#" },
+          { icon: <FaPinterestP />, text: "See us on Pinterest", link: "#" },
+        ].map((item, idx) => (
+          <a
+            key={idx}
+            href={item.link}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-between w-full bg-white border border-green-200 shadow-md hover:shadow-lg rounded-xl px-5 py-3 text-green-700 font-medium hover:bg-green-100 transition-all"
           >
-            <div className="grid gap-4">
-              <div>
-                <label className="block text-sm font-medium text-slate-700">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="mt-1 w-full rounded-lg border px-3 py-2 outline-none focus:border-green-600 transition"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="mt-1 w-full rounded-lg border px-3 py-2 outline-none focus:border-green-600 transition"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="mt-1 w-full rounded-lg border px-3 py-2 outline-none focus:border-green-600 transition"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700">
-                  Message
-                </label>
-                <textarea
-                  rows="4"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="mt-1 w-full rounded-lg border px-3 py-2 outline-none focus:border-green-600 transition"
-                  placeholder="Tell us about your space, needs, or questions"
-                />
-              </div>
-              <button
-                type="submit"
-                className="rounded-xl bg-green-700 px-6 py-3 font-semibold text-white hover:bg-amber-500 hover:shadow-md transition-all"
-              >
-                Send Message
-              </button>
+            <div className="flex items-center gap-3">
+              <span className="text-lg">{item.icon}</span>
+              <span>{item.text}</span>
             </div>
-          </form>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-green-700 py-16 text-white text-center animate-fadeInSlide">
-        <div className="max-w-xl mx-auto px-4">
-          <h2 className="text-2xl font-bold">Let’s make your space sparkle!</h2>
-          <p className="mt-2 text-base">
-            We’ll get back to you within 24 business hours.
-          </p>
-        </div>
-      </section>
+            <span className="text-slate-400">›</span>
+          </a>
+        ))}
+      </div>
     </main>
   );
 }
