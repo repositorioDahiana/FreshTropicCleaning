@@ -23,17 +23,17 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="tel:8669866005"
+              href="tel:2395026166"
               className="border-2 border-white text-white px-6 py-3 font-semibold rounded-xl hover:bg-white hover:text-green-700 transition-all"
             >
-              CALL/TEXT: (339) 035-521
+              CALL/TEXT: (239) 502 6166
             </a>
-            <a
-              href="#"
+            <Link
+              to="/contact"
               className="bg-green-900 text-white px-6 py-3 font-semibold rounded-xl hover:bg-amber-500 transition-all"
             >
               BOOK ONLINE
-            </a>
+            </Link>
             <Link
               to="/hiring"
               className="border-2 border-white text-white px-6 py-3 font-semibold rounded-xl hover:bg-white hover:text-green-700 transition-all"

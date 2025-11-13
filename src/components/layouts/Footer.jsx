@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-center w-full md:w-1/3">
           <h3 className="text-md font-semibold mb-3">Contact Info</h3>
           <p className="flex items-center justify-center gap-2 text-sm text-green-100">
-            <Phone className="h-4 w-4" /> (339) 035-521
+            <Phone className="h-4 w-4" /> (239) 502 6166
           </p>
           <p className="flex items-center justify-center gap-2 text-sm text-green-100 mt-2">
             <Mail className="h-4 w-4" />
