@@ -21,6 +21,7 @@ export default function Home() {
             WE, CLEAN.
           </h1>
 
+          {/* Botones actuales */}
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:2395026166"
@@ -28,22 +29,34 @@ export default function Home() {
             >
               CALL/TEXT: (239) 502 6166
             </a>
+
             <Link
               to="/contact"
               className="bg-green-900 text-white px-6 py-3 font-semibold rounded-xl hover:bg-amber-500 transition-all"
             >
-              BOOK ONLINE
+              OUR LINKS
             </Link>
+
             <Link
               to="/hiring"
               className="border-2 border-white text-white px-6 py-3 font-semibold rounded-xl hover:bg-white hover:text-green-700 transition-all"
             >
               NOW HIRING
             </Link>
+          </div>
 
+          {/* Nuevo Botón: FREE ESTIMATE */}
+          <div className="mt-8">
+            <Link
+              to="/estimate"
+              className="bg-green-900 text-white text-xl font-bold px-10 py-4 rounded-2xl shadow-lg hover:bg-amber-400 transition-all"
+            >
+              FREE ESTIMATE
+            </Link>
           </div>
         </div>
       </section>
+
 
       {/* Impact / Stats Section */}
       <section className="bg-green-100 py-16 text-center animate-fadeInUp">

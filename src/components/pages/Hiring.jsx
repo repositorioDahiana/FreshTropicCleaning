@@ -8,7 +8,8 @@ export default function Hiring() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const navigate = useNavigate();
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,8 +31,9 @@ export default function Hiring() {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
+    setIsSubmitting(true); 
+  
     try {
-      const API_URL = import.meta.env.VITE_API_BASE_URL;
       const response = await fetch(`${API_URL}/api/hiring`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -40,10 +42,12 @@ export default function Hiring() {
   
       if (response.ok) {
         setModalMessage("Your application has been submitted successfully!");
+        setModalType("success");
         setModalOpen(true);
         setForm({});
       } else {
         setModalMessage("There was an error submitting your application.");
+        setModalType("error");
         setModalOpen(true);
       }
     } catch (error) {
@@ -51,7 +55,10 @@ export default function Hiring() {
       setModalMessage("Network error. Please try again.");
       setModalOpen(true);
     }
+  
+    setIsSubmitting(false); 
   };
+  
   
 
   return (
@@ -561,9 +568,14 @@ export default function Hiring() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full bg-green-700 hover:bg-amber-500 text-white font-semibold rounded-xl py-3 transition-all"
+          disabled={isSubmitting}
+          className={`w-full font-semibold rounded-xl py-3 transition-all
+            ${isSubmitting 
+              ? "bg-gray-400 cursor-not-allowed" 
+              : "bg-green-700 hover:bg-amber-500 text-white"
+            }`}
         >
-          Submit Application
+          {isSubmitting ? "Sending..." : "Submit Application"}
         </button>
       </form>
       <SuccessModal

@@ -53,7 +53,7 @@ export default function Navbar() {
             <Item to="/about">About Us</Item>
             <Item to="/services">Services</Item>
             <Link
-              to="/contact"
+              to="/estimate"
               className="ml-2 rounded-xl bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-500 hover:shadow-[0_0_10px_rgba(255,200,0,0.5)] transition-all duration-300"
             >
               Free Estimate
