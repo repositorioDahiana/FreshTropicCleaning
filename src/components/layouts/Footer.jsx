@@ -20,7 +20,8 @@ export default function Footer() {
           </h2>
           <p className="text-sm text-green-100 leading-relaxed">
             Cleaning services for all. <br />
-            Proudly serving all 50 states.
+            Proudly serving for up to 50 <br />
+            Miles from Fort Myers, FL
           </p>
         </div>
 

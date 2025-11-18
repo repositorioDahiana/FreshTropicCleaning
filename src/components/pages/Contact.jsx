@@ -23,7 +23,7 @@ export default function Contact() {
     { icon: <FaGlobe />, text: "Visit Our Website", link: "/", external: false },
 
     // EXTERNAL LINKS
-    { icon: <FaGoogle />, text: "See us on Google", link: "https://google.com", external: true },
+    { icon: <FaGoogle />, text: "See us on Google", link: "https://www.google.com/maps/place/343+W+Mariana+Ave,+North+Fort+Myers,+FL+33903,+EE.+UU./@26.6780158,-81.8960803,812m/data=!3m2!1e3!4b1!4m6!3m5!1s0x88db423978226fcb:0x477fe807c0b1f6f0!8m2!3d26.6780158!4d-81.8960803!16s%2Fg%2F11cpm1030v?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D", external: true },
     { icon: <FaFacebookF />, text: "See us on Facebook", link: "https://facebook.com", external: true },
     { icon: <FaInstagram />, text: "See us on Instagram", link: "https://instagram.com", external: true },
     { icon: <MdWork />, text: "See us on Bark", link: "https://bark.com", external: true },
